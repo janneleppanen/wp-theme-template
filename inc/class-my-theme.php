@@ -14,7 +14,7 @@ class MyTheme {
 	}
 
 	public static function after_setup_theme() {
-		load_theme_textdomain( self::NAME, get_template_directory() . '/_/lang' );
+		load_theme_textdomain( self::$textdomain, get_template_directory() . '/lang' );
 		
 		if ( ! isset( $content_width ) ) $content_width = 900;
 		
@@ -53,7 +53,7 @@ class MyTheme {
 	public static function register_sidebars() {
 		$defaults = array(
 			'id' 			=> 'sidebar', 
-		 	'name' 			=> self::__( 'Default sidebar' ),
+		 	'name' 			=> self::__( 'Default Sidebar' ),
 		 	'description'	=> self::__( 'Place widgets here.' ),
 		 	'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'	=> '</div>',
@@ -63,7 +63,7 @@ class MyTheme {
 
 		foreach ( self::$sidebars as $sidebar ) {
 			$sidebar = array_merge($defaults, $sidebar);
-			
+
 			register_sidebar( array(
 				'id'			=> $sidebar['id'],
 				'name' 			=> $sidebar['name'],

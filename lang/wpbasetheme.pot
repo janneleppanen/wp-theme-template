@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpthemetemplate\n"
+"POT-Creation-Date: 2015-02-25 16:03+0200\n"
+"PO-Revision-Date: 2015-02-25 16:03+0200\n"
+"Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
+"Language-Team: Janne Leppänen\n"
+"Language: en_EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.6\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../footer.php:12
+msgid "Jump top"
+msgstr ""
+
+#: ../functions.php:33
+msgid "Default Sidebar"
+msgstr ""
+
+#: ../functions.php:37
+msgid "Analytics Widgets"
+msgstr ""
+
+#: ../inc/class-my-theme.php:56
+msgid "Default sidebar"
+msgstr ""
+
+#: ../inc/class-my-theme.php:57
+msgid "Place widgets here."
+msgstr ""

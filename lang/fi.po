@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wordpress-theme-template\n"
+"POT-Creation-Date: 2015-02-25 16:09+0200\n"
+"PO-Revision-Date: 2015-02-25 16:09+0200\n"
+"Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
+"Language-Team: Janne Leppänen <janne@janneleppanen.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.6\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2;MyTheme::__;self::"
+"__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../footer.php:11
+msgid "Jump top"
+msgstr "Takaisin ylös"
+
+#: ../functions.php:33 ../inc/class-my-theme.php:56
+msgid "Default Sidebar"
+msgstr "Oletussivupalkki"
+
+#: ../functions.php:37
+msgid "Analytics Widgets"
+msgstr "Analytiikkavimpaimet"
+
+#: ../inc/class-my-theme.php:57
+msgid "Place widgets here."
+msgstr "Aseta vimpaimet tähän."
+
+#~ msgid "Default sidebar"
+#~ msgstr "Oletussivupalkki"
+
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "Yksi ajatus aiheesta &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s ajatusta aiheesta &ldquo;%2$s&rdquo;"
+
+#~ msgid "Comment navigation"
+#~ msgstr "Kommenttien navigaatio"
+
+#~ msgid "&larr; Older Comments"
+#~ msgstr "&larr; Vanhemmat kommentit"
+
+#~ msgid "Newer Comments &rarr;"
+#~ msgstr "Uudemmat kommentit &rarr;"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Kommentointi on suljettu."
+
+#, fuzzy
+#~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Lue lisää &rarr;"
+
+#~ msgid "Pages:"
+#~ msgstr "Sivut:"
+
+#~ msgid "Edit"
+#~ msgstr "Muokkaa"
+
+#, fuzzy
+#~ msgid "Main Sidebar"
+#~ msgstr "Sivupalkki"
+
+#, fuzzy
+#~ msgid "Showcase Sidebar"
+#~ msgstr "Sivupalkki"
+
+#, fuzzy
+#~ msgid "Post navigation"
+#~ msgstr "Kommenttien navigaatio"
+
+#, fuzzy
+#~ msgid "Page %s"
+#~ msgstr "Sivut:"
+
+#~ msgid "Main menu"
+#~ msgstr "Päävalikko"
+
+#, fuzzy
+#~ msgid "Image navigation"
+#~ msgstr "Kommenttien navigaatio"
+
+#, fuzzy
+#~ msgid "&larr; Previous"
+#~ msgstr "&larr; Vanhemmat julkaisut"
+
+#, fuzzy
+#~ msgid "Next &rarr;"
+#~ msgstr "Uudemmat julkaisut &rarr;"
+
+#~ msgid "Search"
+#~ msgstr "Etsi"
+
+#, fuzzy
+#~ msgid "Recent Posts"
+#~ msgstr "Uudemmat julkaisut"
+
+#, fuzzy
+#~ msgid "Default Layout"
+#~ msgstr "Oletussivupalkki"
+
+#, fuzzy
+#~ msgid "Next page"
+#~ msgstr "sivu"
+
+#, fuzzy
+#~ msgid "Page"
+#~ msgstr "Sivut:"
+
+#, fuzzy
+#~ msgid "Continue reading %s"
+#~ msgstr "Lue lisää &rarr;"
+
+#, fuzzy
+#~ msgid "Next post:"
+#~ msgstr "Uudemmat julkaisut"
+
+#, fuzzy
+#~ msgid "Default"
+#~ msgstr "Oletussivupalkki"
+
+#, fuzzy
+#~ msgid "Older Comments"
+#~ msgstr "&larr; Vanhemmat kommentit"
+
+#, fuzzy
+#~ msgid "Newer Comments"
+#~ msgstr "Uudemmat kommentit &rarr;"
+
+#, fuzzy
+#~ msgid "Not Found"
+#~ msgstr "Viestejä ei löytynyt."
+
+#, fuzzy
+#~ msgid "Primary Sidebar"
+#~ msgstr "Sivupalkki"
+
+#, fuzzy
+#~ msgid "Content Sidebar"
+#~ msgstr "Sivupalkki"
+
+#, fuzzy
+#~ msgid "Images"
+#~ msgstr "Sivut:"
+
+#, fuzzy
+#~ msgid "Tag Name"
+#~ msgstr "Nimi"
+
+#, fuzzy
+#~ msgid "Posts navigation"
+#~ msgstr "Kommenttien navigaatio"
+
+#, fuzzy
+#~ msgid "Primary Navigation"
+#~ msgstr "Kommenttien navigaatio"
+
+#, fuzzy
+#~ msgid "(Edit)"
+#~ msgstr "Muokkaa"
+
+#, fuzzy
+#~ msgid "One comment so far"
+#~ msgstr "Uudemmat kommentit &rarr;"
+
+#, fuzzy
+#~ msgid "No posts to display"
+#~ msgstr "Viestejä ei löytynyt."
+
+#~ msgid "404 Error - Unfortunately, page not found."
+#~ msgstr "404 Virhe - Valitettavasti sivua ei löytynyt."
+
+#~ msgid "Email"
+#~ msgstr "Sähköposti"
+
+#~ msgid "Website"
+#~ msgstr "Nettisivu"
+
+#~ msgid "Google Analytics"
+#~ msgstr "Google Analytics -skripti"
+
+#~ msgid "Redirect Forward"
+#~ msgstr "Ohjaa eteenpäin"
+
+#~ msgid "Does it work like that?"
+#~ msgstr "Toimii tää, tästä vaan?"
+
+#~ msgid "Older posts"
+#~ msgstr "Vanhemmat julkaisut"
