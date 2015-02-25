@@ -42,6 +42,7 @@ td,th{padding:0}
 .inline-block{display:inline-block;*display:inline;*zoom:1}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 html,body{font-family:'Open Sans',sans-serif;font-size:18px;color:#333}
+img{max-width:100%;height:auto}
 .sr-only,.hide{display:none}
 .container{max-width:1200px;margin:0 auto}
 .site-title{margin:0}.site-title span{display:none}
@@ -52,5 +53,16 @@ html,body{font-family:'Open Sans',sans-serif;font-size:18px;color:#333}
 .site-footer .footer-content{max-width:1200px;margin:0 auto}
 .site-footer .copyright{background:#444;padding:20px;text-align:center}
 .mobile-jump-top{display:none;z-index:1000;position:fixed;bottom:0;left:0;right:0;text-align:center;text-decoration:none;padding:10px;background:#333;color:#fff;-webkit-transition:opacity .6s;-moz-transition:opacity .6s;-ms-transition:opacity .6s;-o-transition:opacity .6s}.mobile-jump-top:hover{opacity:1}
+.gallery .gallery-item{float:left;text-align:center}
+.gallery .gallery-caption{margin:0}
+.gallery-columns-1 .gallery-item{width:100%}
+.gallery-columns-2 .gallery-item{width:50%}
+.gallery-columns-3 .gallery-item{width:33.333333333333336%}
+.gallery-columns-4 .gallery-item{width:25%}
+.gallery-columns-5 .gallery-item{width:20%}
+.gallery-columns-6 .gallery-item{width:16.666666666666668%}
+.gallery-columns-7 .gallery-item{width:14.285714285714286%}
+.gallery-columns-8 .gallery-item{width:12.5%}
+.gallery-columns-9 .gallery-item{width:11.11111111111111%}
 .site-title{-webkit-animation:fadeIn 2s 0 ease;-moz-animation:fadeIn 2s 0 ease;-ms-animation:fadeIn 2s 0 ease}
 @-webkit-keyframes fadeIn{0%{opacity:0} 100%{opacity:1}}@-moz-keyframes fadeIn{0%{opacity:0} 100%{opacity:1}}@-ms-keyframes fadeIn{0%{opacity:0} 100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0} 100%{opacity:1}}@keyframes fadeIn{0%{opacity:0} 100%{opacity:1}}@media screen and (max-width:600px){.site-footer .copyright{margin-bottom:44px} .mobile-jump-top{display:block;opacity:0;pointer-events:none} .scrolled .mobile-jump-top{opacity:1;pointer-events:auto}}

@@ -24,6 +24,10 @@ html, body {
 	font-size: 18px;
 	color: #333;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 .sr-only, .hide {
 	display: none;
 }
@@ -92,6 +96,25 @@ Footer
 		opacity: 1;
 	}
 }
+
+/*
+Gallery
+==================
+*/
+.gallery {
+	.gallery-item { float: left; text-align: center; }
+	.gallery-caption { margin: 0px; }
+}
+.gallery-columns-1 .gallery-item { .wp-gallery-columns(1); }
+.gallery-columns-2 .gallery-item { .wp-gallery-columns(2); }
+.gallery-columns-3 .gallery-item { .wp-gallery-columns(3); }
+.gallery-columns-4 .gallery-item { .wp-gallery-columns(4); }
+.gallery-columns-5 .gallery-item { .wp-gallery-columns(5); }
+.gallery-columns-6 .gallery-item { .wp-gallery-columns(6); }
+.gallery-columns-7 .gallery-item { .wp-gallery-columns(7); }
+.gallery-columns-8 .gallery-item { .wp-gallery-columns(8); }
+.gallery-columns-9 .gallery-item { .wp-gallery-columns(9); }
+.wp-gallery-columns( @columnsCount ) { width: ( 100% / @columnsCount ); }
 
 
 /*

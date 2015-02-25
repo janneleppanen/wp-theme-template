@@ -40,7 +40,7 @@ class MyTheme {
 		// add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
 		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
 		
-		// add_filter( 'use_default_gallery_style', '__return_false' );
+		add_filter( 'use_default_gallery_style', '__return_false' );
 		// add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
 		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
 		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'get_max_revisions' ), 10, 2 );
