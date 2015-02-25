@@ -8,6 +8,7 @@ class MyTheme {
 	protected static $styles = array();
 	protected static $scripts = array();
 	protected static $sidebars = array();
+	protected static $max_revisions = 3;
 
 	public static function init() {
 		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
@@ -42,7 +43,7 @@ class MyTheme {
 		// add_filter( 'use_default_gallery_style', '__return_false' );
 		// add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
 		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
-		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'limit_revisions' ), 10, 2 );
+		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'get_max_revisions' ), 10, 2 );
 		// add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
 		// add_filter( 'tiny_mce_before_init', array( __CLASS__, 'mce_custom_styles' ) );
 		// add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
@@ -108,6 +109,18 @@ class MyTheme {
 
 	public static function set_sidebars( $sidebars ) {
 		self::$sidebars = array_merge( self::$sidebars, $sidebars );
+	}
+
+	public static function set_max_revisions( $max ) {
+		if ( $max > 0 ) {
+			self::$max_revisions = $max;
+			return true;
+		}
+		return false;
+	}
+
+	public static function get_max_revisions( $num, $post ) {
+	    return self::$max_revisions;
 	}
 
 	public static function antispambot_the_content_filter($content) {
