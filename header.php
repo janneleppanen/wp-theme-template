@@ -17,8 +17,7 @@
         <div class="header-content">
             <h1 class="site-title">
                 <a href="<?php echo esc_url( home_url('/') ); ?>" rel="home">
-                    <img src="<?php echo IMAGES; ?>/site-logo.png" alt="">
-                    <span><?php bloginfo( 'name' ); ?></span>
+                    <?php bloginfo( 'name' ); ?>
                 </a>
             </h1>
         </div>
