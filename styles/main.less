@@ -1,46 +1,153 @@
-/*
-Imports
-==================
-*/
+/* Imports
+================== */
 @import (less) '../vendor/normalize.css';
 @import (less) 'mixins.less';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
 
-/*
-Variables
-==================
-*/
+
+/* Variables
+================== */
 @content-max-width: 1200px;
 
+@link-color: #09f;
 
 
-/*
-General
-==================
-*/
-* { .box-sizing(); }
-html, body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	color: #333;
+/* General
+================== */
+* { 
+	.box-sizing(); 
 }
-img {
-	max-width: 100%;
-	height: auto;
+html { 
+	overflow-y: scroll; 
 }
-.sr-only, .hide {
+strong, b { 
+	font-weight: 700; 
+}
+a { 
+	color: @link-color; 
+	text-decoration: none; 
+	.transition(all 0.2s);
+	&:hover { 
+		opacity: 0.8; 
+	} 
+}
+img { 
+	max-width: 100%; 
+	height: auto; 
+}
+.clear, .clearer { 
+	clear: both; 
+}
+.clearfix:after { 
+	display: table;
+	content: ' ';
+	clear: both; 
+}
+.clearfix() {
+	&:after {
+		display: table; content: ''; clear: both; 	
+	}
+}
+.sr-only, .hide { 
+	visibility: hidden; 
 	display: none;
 }
-.container {
+.aligncenter { 
+	display: block; 
+	margin: 5px auto;
+}
+.alignleft { 
+	float: left; 
+	margin: 5px 20px 20px 0px;
+}
+.alignright { 
+	float: right; 
+	margin: 5px 0px 20px 20px;
+}
+.wp-caption { 
+	max-width: 100%;
+}
+.wp-caption-text { 
+	width: auto;
+}
+.gallery-caption {
+	width: auto;
+}
+.sticky {
+	width: auto;
+}
+.bypostauthor {
+	width: auto;
+}
+
+
+/* Typography
+======================================= */
+html, body { 
+	color: #333; 
+	font: 400 100%/1.5 'Open Sans', sans-serif;
+	word-wrap: break-word; 
+	height:100%;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol { 
+	margin: 0px 0px 16px 0px; 
+	margin-bottom: 1rem; 
+}
+h1, h2, h3, h4, h5, h6 {
+	// ...
+}
+h1 { .font-size(48); }
+h2 { .font-size(36); }
+h3 { .font-size(24); }
+h4 { .font-size(18); }
+h5 { .font-size(16); }
+h6 { .font-size(16); }
+ul, ol {
+	// ...
+}
+blockquote { 
+	font-style: italic; 
+	font-weight: 300; 
+	padding-left: 75px; 
+	position: relative;
+	&:before {
+		color: #eee;
+		content: '\201C';
+		font-size: 140px;
+		font-weight: 400;
+		line-height: .8;
+		padding-right: 25px;
+		position: absolute;
+		top: -3px;
+		left: -15px;
+	}
+}
+
+
+/* Layout
+================== */
+.container { 
 	max-width: @content-max-width;
 	margin: 0 auto;
 }
+.site-header {
+	.header-content { 
+		.container; 
+	}
+}
+.site-content {
+	.container;
+	min-height: 500px;
+}
+.site-footer {
+	.footer-container {
+		.container;
+	}
+}
 
 
-/*
-Header
-==================
-*/
+/* Header
+================== */
 .site-title {
 	margin: 0;
 	span { display: none; }
@@ -50,30 +157,32 @@ Header
 	color: #fff;
 	padding: 20px;
 	a { color: #fff; }
-	.header-content { .container; }
 }
 
 
-/*
-Content
-==================
-*/
-.site-content {
-	.container;
-	min-height: 500px;
-}
+/* Navigation
+================== */
 
 
-/*
-Footer
-==================
-*/
+/* Content
+================== */
+
+
+/* Sidebars
+================== */
+
+
+/* Comments
+================== */
+
+
+/* Footer
+================== */
 .site-footer {
 	background: #333;
 	color: #fff;
 	a { color: #fff; }
 	
-	.footer-content { .container; }
 	.copyright {
 		background: #444;
 		padding: 20px;
@@ -97,10 +206,12 @@ Footer
 	}
 }
 
-/*
-Gallery
-==================
-*/
+/* Forms
+================== */
+
+
+/* Gallery
+================== */
 .gallery {
 	.gallery-item { float: left; text-align: center; }
 	.gallery-caption { margin: 0px; }
@@ -117,14 +228,11 @@ Gallery
 .wp-gallery-columns( @columnsCount ) { width: ( 100% / @columnsCount ); }
 
 
-/*
-Animations
-==================
-*/
+/* Animations
+================== */
 .site-title {
 	.animation(fadeIn, 2s);
 }
-
 @-webkit-keyframes fadeIn {.fadeIn;}
 @-moz-keyframes fadeIn {.fadeIn;}
 @-ms-keyframes fadeIn {.fadeIn;}
@@ -139,15 +247,12 @@ Animations
 	}
 }
 
-/*
-Responsive
-==================
-*/
+
+/* Medias
+================== */
 @media screen and (max-width: 600px) {
-	/*
-	Footer
-	==================
-	*/
+	/* Footer
+	================== */
 	.site-footer {
 		.copyright {
 			margin-bottom: 44px;
