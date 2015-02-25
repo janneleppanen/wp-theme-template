@@ -14,7 +14,7 @@
 
 </div><!-- .site-wrapper -->
 
-<div class="analytics hide"><?php dynamic_sidebar( 'analytics-widget' ); ?></div>
+<div class="analytics hide"><?php dynamic_sidebar( 'analytics' ); ?></div>
 
 <?php wp_footer(); ?>
 

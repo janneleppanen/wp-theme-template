@@ -26,3 +26,14 @@ MyTheme::load_scripts(array(
 		'in_footer' => true
 	)
 ));
+
+MyTheme::set_sidebars(array(
+	array( 
+	 	'id' 			=> 'sidebar', 
+	 	'name' 			=> MyTheme::__( 'Default Sidebar' ), 
+	),
+	array( 
+		'id' 			=> 'analytics', 
+	 	'name' 			=> MyTheme::__( 'Analytics Widgets' ), 
+	)
+));

@@ -7,6 +7,7 @@ class MyTheme {
 	protected static $textdomain = 'wordpress-theme-template';
 	protected static $styles = array();
 	protected static $scripts = array();
+	protected static $sidebars = array();
 
 	public static function init() {
 		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
@@ -36,7 +37,7 @@ class MyTheme {
 		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts' ) );
 		// add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets' ) );
 		// add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
-		// add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
+		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
 		
 		// add_filter( 'use_default_gallery_style', '__return_false' );
 		// add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
@@ -47,6 +48,32 @@ class MyTheme {
 		// add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
 		// add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
 		// add_action( 'login_enqueue_scripts',array( __CLASS__, 'login_enqueue_scripts') );
+	}
+
+	public static function register_sidebars() {
+		$defaults = array(
+			'id' 			=> 'sidebar', 
+		 	'name' 			=> self::__( 'Default sidebar' ),
+		 	'description'	=> self::__( 'Place widgets here.' ),
+		 	'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</div>',
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
+		);
+
+		foreach ( self::$sidebars as $sidebar ) {
+			$sidebar = array_merge($defaults, $sidebar);
+			
+			register_sidebar( array(
+				'id'			=> $sidebar['id'],
+				'name' 			=> $sidebar['name'],
+				'description'	=> $sidebar['description'],
+				'before_widget'	=> $sidebar['before_widget'],
+				'after_widget'	=> $sidebar['after_widget'],
+				'before_title' 	=> $sidebar['before_title'],
+				'after_title'	=> $sidebar['after_title']
+			));
+		}
 	}
 
 	public static function wp_enqueue_scripts() {
@@ -77,6 +104,10 @@ class MyTheme {
 
 	public static function load_styles( $styles ) {
 		self::$styles = array_merge( self::$styles, $styles );
+	}
+
+	public static function set_sidebars( $sidebars ) {
+		self::$sidebars = array_merge( self::$sidebars, $sidebars );
 	}
 
 	public static function antispambot_the_content_filter($content) {
