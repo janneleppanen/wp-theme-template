@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wordpress-theme-template\n"
-"POT-Creation-Date: 2015-02-25 16:09+0200\n"
-"PO-Revision-Date: 2015-02-25 16:09+0200\n"
+"POT-Creation-Date: 2015-02-25 17:09+0200\n"
+"PO-Revision-Date: 2015-02-25 17:09+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../footer.php:11
+#: ../footer.php:12
 msgid "Jump top"
 msgstr "Takaisin ylös"
 
@@ -31,6 +31,11 @@ msgstr "Analytiikkavimpaimet"
 #: ../inc/class-my-theme.php:57
 msgid "Place widgets here."
 msgstr "Aseta vimpaimet tähän."
+
+#: ../inc/class-my-theme.php:138
+#, fuzzy
+msgid "page"
+msgstr "sivu"
 
 #~ msgid "Default sidebar"
 #~ msgstr "Oletussivupalkki"
@@ -103,10 +108,6 @@ msgstr "Aseta vimpaimet tähän."
 #, fuzzy
 #~ msgid "Default Layout"
 #~ msgstr "Oletussivupalkki"
-
-#, fuzzy
-#~ msgid "Next page"
-#~ msgstr "sivu"
 
 #, fuzzy
 #~ msgid "Page"

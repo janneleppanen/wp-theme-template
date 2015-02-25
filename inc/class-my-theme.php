@@ -37,11 +37,10 @@ class MyTheme {
 		// add_action( 'admin_menu',			array( __CLASS__, 'admin_menu' ) );
 		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts' ) );
 		// add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets' ) );
-		// add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
+		add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
 		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
 		
 		add_filter( 'use_default_gallery_style', '__return_false' );
-		// add_filter( 'wp_title', 			array( __CLASS__, 'wp_title' ) );
 		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
 		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'get_max_revisions' ), 10, 2 );
 		// add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
@@ -132,6 +131,11 @@ class MyTheme {
 		}
 		
 		return $content;
+	}
+
+	public static function rewrite_rules() {
+		global $wp_rewrite;
+		$wp_rewrite->pagination_base = self::__( 'page' );
 	}
 
 	public static function _e($str) {
