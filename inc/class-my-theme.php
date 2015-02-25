@@ -10,6 +10,7 @@ class MyTheme {
 	protected static $sidebars = array();
 	protected static $style_formats = array();
 	protected static $max_revisions = 3;
+	protected static $login_stylesheet = '';
 
 	public static function init() {
 		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
@@ -44,11 +45,11 @@ class MyTheme {
 		add_filter( 'use_default_gallery_style', '__return_false' );
 		add_filter( 'the_content', 				array( __CLASS__, 'antispambot_the_content_filter' ) );
 		add_filter( 'wp_revisions_to_keep', 	array( __CLASS__, 'get_max_revisions' ), 10, 2 );
-		add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
-		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'mce_custom_styles' ) );
-		// add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
-		// add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
-		// add_action( 'login_enqueue_scripts',array( __CLASS__, 'login_enqueue_scripts') );
+		add_filter( 'mce_buttons_2',			array( __CLASS__, 'mce_style_select' ) );
+		add_filter( 'tiny_mce_before_init', 	array( __CLASS__, 'mce_custom_styles' ) );
+		add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
+		add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
+		add_action( 'login_enqueue_scripts',	array( __CLASS__, 'login_enqueue_scripts') );
 	}
 
 	public static function register_sidebars() {
@@ -115,6 +116,12 @@ class MyTheme {
 		self::$style_formats = array_merge( self::$style_formats, $style_formats );
 	}
 
+	public static function set_login_stylesheet( $stylesheet ) {
+		if ( $stylesheet ) {
+			self::$login_stylesheet = $stylesheet;
+		}
+	}
+
 	public static function set_max_revisions( $max ) {
 		if ( $max > 0 ) {
 			self::$max_revisions = $max;
@@ -164,6 +171,20 @@ class MyTheme {
 	public static function mce_custom_styles( $init_array ) {   
 		$init_array['style_formats'] = json_encode( self::$style_formats ); 
 		return $init_array;
+	}
+
+	public static function login_enqueue_scripts() {
+		if ( self::$login_stylesheet ) {
+			wp_enqueue_style( 'login-styles', THEME_DIR . self::$login_stylesheet, false );
+		}
+	}
+
+	public static function login_headerurl() {
+    	return get_bloginfo( 'url' );
+	}
+	
+	public static function login_headertitle() {
+	    return get_bloginfo( 'name' );
 	}
 
 	public static function _e($str) {
