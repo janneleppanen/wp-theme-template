@@ -37,3 +37,16 @@ MyTheme::set_sidebars(array(
 	 	'name' 			=> MyTheme::__( 'Analytics Widgets' ), 
 	)
 ));
+
+MyTheme::set_style_formats(array(  
+	array(
+		'title' 	=> 'Button',
+		'selector' 	=> 'a',
+		'classes' 	=> 'btn'
+	),
+	array(
+		'title' 	=> 'Uppercase',
+		'selector' 	=> 'p',
+		'classes' 	=> 'uppercase'
+	)
+));

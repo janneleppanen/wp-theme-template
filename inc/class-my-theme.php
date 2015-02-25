@@ -8,6 +8,7 @@ class MyTheme {
 	protected static $styles = array();
 	protected static $scripts = array();
 	protected static $sidebars = array();
+	protected static $style_formats = array();
 	protected static $max_revisions = 3;
 
 	public static function init() {
@@ -19,9 +20,9 @@ class MyTheme {
 		
 		if ( ! isset( $content_width ) ) $content_width = 900;
 		
-		add_editor_style( '/css/editor.css' );
+		add_editor_style( '/styles/editor.css' );
 
-		// add_theme_support( 'post-formats', array() );
+		add_theme_support( 'post-formats', array() );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -35,16 +36,16 @@ class MyTheme {
 		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 		// add_action( 'admin_menu',			array( __CLASS__, 'admin_menu' ) );
-		add_action( 'wp_enqueue_scripts',	array( __CLASS__, 'wp_enqueue_scripts' ) );
-		// add_action( 'wp_dashboard_setup',	array( __CLASS__, 'remove_dashboard_widgets' ) );
-		add_action( 'init',					array( __CLASS__, 'rewrite_rules' ) );
-		add_action( 'widgets_init', 		array( __CLASS__, 'register_sidebars' ) );
+		add_action( 'wp_enqueue_scripts',		array( __CLASS__, 'wp_enqueue_scripts' ) );
+		add_action( 'wp_dashboard_setup',		array( __CLASS__, 'remove_dashboard_widgets' ) );
+		add_action( 'init',						array( __CLASS__, 'rewrite_rules' ) );
+		add_action( 'widgets_init', 			array( __CLASS__, 'register_sidebars' ) );
 		
 		add_filter( 'use_default_gallery_style', '__return_false' );
-		add_filter( 'the_content',			array( __CLASS__, 'antispambot_the_content_filter' ) );
-		add_filter( 'wp_revisions_to_keep', array( __CLASS__, 'get_max_revisions' ), 10, 2 );
-		// add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
-		// add_filter( 'tiny_mce_before_init', array( __CLASS__, 'mce_custom_styles' ) );
+		add_filter( 'the_content', 				array( __CLASS__, 'antispambot_the_content_filter' ) );
+		add_filter( 'wp_revisions_to_keep', 	array( __CLASS__, 'get_max_revisions' ), 10, 2 );
+		add_filter( 'mce_buttons_2',		array( __CLASS__, 'mce_style_select' ) );
+		add_filter( 'tiny_mce_before_init', array( __CLASS__, 'mce_custom_styles' ) );
 		// add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
 		// add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
 		// add_action( 'login_enqueue_scripts',array( __CLASS__, 'login_enqueue_scripts') );
@@ -110,6 +111,10 @@ class MyTheme {
 		self::$sidebars = array_merge( self::$sidebars, $sidebars );
 	}
 
+	public static function set_style_formats( $style_formats ) {
+		self::$style_formats = array_merge( self::$style_formats, $style_formats );
+	}
+
 	public static function set_max_revisions( $max ) {
 		if ( $max > 0 ) {
 			self::$max_revisions = $max;
@@ -136,6 +141,29 @@ class MyTheme {
 	public static function rewrite_rules() {
 		global $wp_rewrite;
 		$wp_rewrite->pagination_base = self::__( 'page' );
+	}
+
+	public static function remove_dashboard_widgets() {
+		$user = wp_get_current_user();
+		if( $user->has_cap( 'manage_options') ) {
+			remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+			remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+			remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+	        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	        remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	        remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+	        remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );  
+		}
+	}
+
+	public static function mce_style_select( $buttons ) {
+		array_unshift( $buttons, 'styleselect' );
+		return $buttons;
+	}
+
+	public static function mce_custom_styles( $init_array ) {   
+		$init_array['style_formats'] = json_encode( self::$style_formats ); 
+		return $init_array;
 	}
 
 	public static function _e($str) {
