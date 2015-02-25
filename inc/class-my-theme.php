@@ -187,11 +187,18 @@ class MyTheme {
 	    return get_bloginfo( 'name' );
 	}
 
-	public static function _e($str) {
-		echo self::__($str);
+	public static function _e( $str ) {
+		echo self::__( $str );
 	}
 
-	public static function __($str) {
-		return __($str, self::$textdomain);
+	public static function __( $str ) {
+		return __( $str, self::$textdomain );
 	}
+    public static function _n( $one, $many, $count ) { 
+    	return _n( $one, $many, $count, self::$textdomain ); 
+    }
+
+    public static function _x( $str, $context ) { 
+    	return _x( $str, $context, self::$textdomain ); 
+    }
 }
