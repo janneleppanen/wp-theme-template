@@ -35,6 +35,19 @@ img {
 	max-width: 100%; 
 	height: auto; 
 }
+.button() {
+	background: @link-color;
+	padding: 10px 20px;
+	border: none;
+	width: auto;
+	.inline-block();
+	color: #fff;
+	text-decoration: none;
+	.transition(all 0.2s);
+	&:hover {
+		background: darken(@link-color, 10%);
+	}
+}
 .clear, .clearer { 
 	clear: both; 
 }
@@ -238,6 +251,32 @@ blockquote {
 
 /* Forms
 ================== */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+textarea, 
+select { 
+  	outline: none;
+	max-width: 100%;
+	width: 400px;
+	padding: 10px; 
+	border: 1px solid #aaa;
+	.transition(all 0.2s);
+	&:focus {
+		.transform(scale(1.1, 1));
+		.box-shadow(0 0 0 2px @link-color);
+		border-color: transparent;
+	}
+}
+label {
+	display: block;
+	font-weight: bold;
+}
+input[type="submit"],
+input[type="button"] {
+	outline: none;
+	.button();
+}
 
 
 /* Gallery
