@@ -24,9 +24,13 @@ class MyTheme {
 		add_editor_style( '/styles/editor.css' );
 
 		add_theme_support( 'post-formats', array() );
-		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
+
+		add_image_size('large', 700, '', true);
+    	add_image_size('medium', 250, '', true);
+    	add_image_size('small', 120, '', true);
 		
 		remove_action('wp_head', 'rsd_link');
 		remove_action('wp_head', 'wp_generator');
