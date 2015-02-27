@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wordpress-theme-template\n"
-"POT-Creation-Date: 2015-02-25 17:09+0200\n"
-"PO-Revision-Date: 2015-02-25 17:09+0200\n"
+"POT-Creation-Date: 2015-02-27 13:41+0200\n"
+"PO-Revision-Date: 2015-02-27 13:42+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language: fi\n"
@@ -16,24 +16,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
+#: ../404.php:5
+msgid "Unfortunately that page can&rsquo;t be found."
+msgstr "Valitettavasti sivua ei löytynyt."
+
+#: ../404.php:7
+#, php-format
+msgid "You can %s visit the Home Page %s or perhaps searching will help"
+msgstr "Voit %s palata etusivulle %s tai kokeilla hakua"
+
 #: ../footer.php:12
 msgid "Jump top"
 msgstr "Takaisin ylös"
 
-#: ../functions.php:33 ../inc/class-my-theme.php:56
+#: ../functions.php:38 ../inc/class-my-theme.php:62
 msgid "Default Sidebar"
 msgstr "Oletussivupalkki"
 
-#: ../functions.php:37
+#: ../functions.php:42
 msgid "Analytics Widgets"
 msgstr "Analytiikkavimpaimet"
 
-#: ../inc/class-my-theme.php:57
+#: ../searchform.php:3
+msgid "Search"
+msgstr "Etsi"
+
+#: ../inc/class-my-theme.php:63
 msgid "Place widgets here."
 msgstr "Aseta vimpaimet tähän."
 
-#: ../inc/class-my-theme.php:138
-#, fuzzy
+#: ../inc/class-my-theme.php:154
 msgid "page"
 msgstr "sivu"
 
@@ -97,9 +109,6 @@ msgstr "sivu"
 #, fuzzy
 #~ msgid "Next &rarr;"
 #~ msgstr "Uudemmat julkaisut &rarr;"
-
-#~ msgid "Search"
-#~ msgstr "Etsi"
 
 #, fuzzy
 #~ msgid "Recent Posts"
@@ -172,9 +181,6 @@ msgstr "sivu"
 #, fuzzy
 #~ msgid "No posts to display"
 #~ msgstr "Viestejä ei löytynyt."
-
-#~ msgid "404 Error - Unfortunately, page not found."
-#~ msgstr "404 Virhe - Valitettavasti sivua ei löytynyt."
 
 #~ msgid "Email"
 #~ msgstr "Sähköposti"
