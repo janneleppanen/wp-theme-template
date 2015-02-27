@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="primary">
+<div class="primary" role="main">
 	
 	<h1><?php MyTheme::_e( 'Unfortunately that page can&rsquo;t be found.' ); ?></h1>
 
