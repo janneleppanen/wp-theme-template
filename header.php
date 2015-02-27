@@ -9,7 +9,7 @@
 
 <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <div id="top" class="site-wrapper">
 
@@ -20,7 +20,7 @@
                     <?php bloginfo( 'name' ); ?>
                 </a>
             </h1>
-        </div>
-    </header>
+        </div><!-- .header-content -->
+    </header><!-- .site-header -->
 
     <div class="site-content">
