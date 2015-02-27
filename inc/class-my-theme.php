@@ -13,7 +13,7 @@ class MyTheme {
 	protected static $login_stylesheet = '';
 
 	public static function init() {
-		add_action( "after_setup_theme", array(__CLASS__, 'after_setup_theme'), 5 );
+		add_action( "after_setup_theme", array( __CLASS__, 'after_setup_theme' ), 5 );
 	}
 
 	public static function after_setup_theme() {
@@ -28,17 +28,17 @@ class MyTheme {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size('large', 700, '', true);
-    	add_image_size('medium', 250, '', true);
-    	add_image_size('small', 120, '', true);
+		add_image_size( 'large', 700, '', true );
+    	add_image_size( 'medium', 250, '', true );
+    	add_image_size( 'small', 120, '', true );
 		
-		remove_action('wp_head', 'rsd_link');
-		remove_action('wp_head', 'wp_generator');
-		remove_action('wp_head', 'index_rel_link');
-		remove_action('wp_head', 'wlwmanifest_link');
-		remove_action('wp_head', 'start_post_rel_link', 10, 0);
-		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'index_rel_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 
 		// add_action( 'admin_menu',			array( __CLASS__, 'admin_menu' ) );
 		add_action( 'wp_enqueue_scripts',		array( __CLASS__, 'wp_enqueue_scripts' ) );
@@ -51,8 +51,8 @@ class MyTheme {
 		add_filter( 'wp_revisions_to_keep', 	array( __CLASS__, 'get_max_revisions' ), 10, 2 );
 		add_filter( 'mce_buttons_2',			array( __CLASS__, 'mce_style_select' ) );
 		add_filter( 'tiny_mce_before_init', 	array( __CLASS__, 'mce_custom_styles' ) );
-		add_filter( 'login_headerurl', 		array( __CLASS__, 'login_headerurl') );
-		add_filter( 'login_headertitle', 	array( __CLASS__, 'login_headertitle') );
+		add_filter( 'login_headerurl', 			array( __CLASS__, 'login_headerurl') );
+		add_filter( 'login_headertitle', 		array( __CLASS__, 'login_headertitle') );
 		add_action( 'login_enqueue_scripts',	array( __CLASS__, 'login_enqueue_scripts') );
 	}
 
@@ -84,22 +84,22 @@ class MyTheme {
 
 	public static function wp_enqueue_scripts() {
 		foreach ( self::$styles as $style ) {
-			if( is_array( $style ) )
+			if ( is_array( $style ) )
 				wp_register_style( $style['handle'], THEME_DIR . $style['src'], $style['deps'], self::VERSION, $style['media'] );
 		}
 
 		foreach ( self::$styles as $style ) {
-			if( is_array( $style ) )
+			if ( is_array( $style ) )
 				wp_enqueue_style( $style['handle'] );
 		}
 
 		foreach ( self::$scripts as $script ) {
-			if( is_array( $script ) )
+			if ( is_array( $script ) )
 				wp_register_script( $script['handle'], THEME_DIR . $script['src'], $script['deps'], self::VERSION, $script['in_footer'] );
 		}
 
 		foreach ( self::$scripts as $script ) {
-			if( is_array( $script ) )
+			if ( is_array( $script ) )
 				wp_enqueue_script( $script['handle'] );
 		}
 	}
@@ -138,7 +138,7 @@ class MyTheme {
 	    return self::$max_revisions;
 	}
 
-	public static function antispambot_the_content_filter($content) {
+	public static function antispambot_the_content_filter( $content ) {
 		$matches = array();
 		preg_match_all( "/\b\w+\@\w+[\.\w+]+\b/", $content, $matches);
 		

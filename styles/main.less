@@ -8,7 +8,6 @@
 /* Variables
 ================== */
 @content-max-width: 1200px;
-
 @link-color: #09f;
 
 
@@ -20,7 +19,8 @@
 html { 
 	overflow-y: scroll; 
 }
-strong, b { 
+strong, 
+b { 
 	font-weight: 700; 
 }
 a { 
@@ -48,7 +48,8 @@ img {
 		display: table; content: ''; clear: both; 	
 	}
 }
-.sr-only, .hide { 
+.sr-only, 
+.hide { 
 	visibility: hidden; 
 	display: none;
 }
@@ -83,17 +84,31 @@ img {
 
 /* Typography
 ======================================= */
-html, body { 
+html, 
+body { 
 	color: #333; 
 	font: 400 100%/1.5 'Open Sans', sans-serif;
 	word-wrap: break-word; 
 	height:100%;
 }
-h1, h2, h3, h4, h5, h6, p, ul, ol { 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
 	margin: 0px 0px 16px 0px; 
 	margin-bottom: 1rem; 
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	// ...
 }
 h1 { .font-size(48); }
@@ -102,7 +117,8 @@ h3 { .font-size(24); }
 h4 { .font-size(18); }
 h5 { .font-size(16); }
 h6 { .font-size(16); }
-ul, ol {
+ul,
+ol {
 	// ...
 }
 blockquote { 
@@ -150,7 +166,9 @@ blockquote {
 ================== */
 .site-title {
 	margin: 0;
-	span { display: none; }
+	span { 
+		display: none; 
+	}
 }
 .site-header {
 	background: #333;
@@ -181,8 +199,9 @@ blockquote {
 .site-footer {
 	background: #333;
 	color: #fff;
-	a { color: #fff; }
-	
+	a { 
+		color: #fff; 
+	}
 	.copyright {
 		background: #444;
 		padding: 20px;
@@ -193,13 +212,14 @@ blockquote {
 	display: none; 
 	z-index: 1000; 
 	position: fixed; 
-	bottom: 0px; left: 0; right: 0;
+	bottom: 0; 
+	left: 0; 
+	right: 0;
 	text-align: center;
 	text-decoration: none;
 	padding: 10px; 
 	background: #333;
 	color: #fff;
-	
 	.transition(opacity 0.6s);
 	&:hover { 
 		opacity: 1;
@@ -213,8 +233,14 @@ blockquote {
 /* Gallery
 ================== */
 .gallery {
-	.gallery-item { float: left; text-align: center; }
-	.gallery-caption { margin: 0px; }
+	.gallery-item { 
+		float: left; 
+		text-align: 
+		center;
+	}
+	.gallery-caption { 
+		margin: 0px;
+	}
 }
 .gallery-columns-1 .gallery-item { .wp-gallery-columns(1); }
 .gallery-columns-2 .gallery-item { .wp-gallery-columns(2); }
