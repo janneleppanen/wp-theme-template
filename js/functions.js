@@ -16,8 +16,8 @@ $('document').ready(function() {
 	$('.mobile-jump-top').bind('click', function(e) {
 		e.preventDefault();
 		$('html,body').animate({
-    		scrollTop: $( 'body' ).offset().top
-    	});
+			scrollTop: $( 'body' ).offset().top
+		});
 	});
 
 });

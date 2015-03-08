@@ -1,8 +1,8 @@
 <?php
 
 class MyTheme {
-	const NAME 		= THEME_NAME;
-	const VERSION 	= THEME_VERSION;
+	const NAME		= THEME_NAME;
+	const VERSION	= THEME_VERSION;
 
 	protected static $textdomain = 'wordpress-theme-template';
 	protected static $styles = array();
@@ -29,8 +29,8 @@ class MyTheme {
 		add_theme_support( 'post-thumbnails' );
 
 		add_image_size( 'large', 700, '', true );
-    	add_image_size( 'medium', 250, '', true );
-    	add_image_size( 'small', 120, '', true );
+		add_image_size( 'medium', 250, '', true );
+		add_image_size( 'small', 120, '', true );
 		
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wp_generator' );
@@ -160,10 +160,10 @@ class MyTheme {
 			remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 			remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
 			remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-	        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-	        remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-	        remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
-	        remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );  
+			remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+			remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+			remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+			remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );  
 		}
 	}
 
@@ -184,7 +184,7 @@ class MyTheme {
 	}
 
 	public static function login_headerurl() {
-    	return get_bloginfo( 'url' );
+		return get_bloginfo( 'url' );
 	}
 	
 	public static function login_headertitle() {
@@ -198,11 +198,11 @@ class MyTheme {
 	public static function __( $str ) {
 		return __( $str, self::$textdomain );
 	}
-    public static function _n( $one, $many, $count ) { 
-    	return _n( $one, $many, $count, self::$textdomain ); 
-    }
+	public static function _n( $one, $many, $count ) { 
+		return _n( $one, $many, $count, self::$textdomain ); 
+	}
 
-    public static function _x( $str, $context ) { 
-    	return _x( $str, $context, self::$textdomain ); 
-    }
+	public static function _x( $str, $context ) { 
+		return _x( $str, $context, self::$textdomain ); 
+	}
 }
