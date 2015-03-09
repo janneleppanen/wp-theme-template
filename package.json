@@ -1,0 +1,9 @@
+{
+  "name": "wp-theme-template",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-concat": "^2.5.2",
+    "gulp-uglify": "^1.1.0"
+  }
+}
