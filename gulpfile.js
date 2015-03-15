@@ -4,7 +4,8 @@ var gulp = require('gulp'),
 	less = require('gulp-less'),
 	minifyCSS = require('gulp-minify-css'),
 	imagemin = require('gulp-imagemin'),
-	pngquant = require('imagemin-pngquant');
+	pngquant = require('imagemin-pngquant'),
+	livereload = require('gulp-livereload');
 
 var path = {
 	themeStyles: [
@@ -31,7 +32,8 @@ gulp.task('themeStyles', function() {
 		.pipe(concat('main.less'))
 		.pipe(less())
 		.pipe(minifyCSS())
-		.pipe(gulp.dest('styles/'));
+		.pipe(gulp.dest('styles/'))
+		.pipe(livereload());
 });
 
 gulp.task('editorStyles', function() {
@@ -39,7 +41,8 @@ gulp.task('editorStyles', function() {
 		.pipe(concat('editor.less'))
 		.pipe(less())
 		.pipe(minifyCSS())
-		.pipe(gulp.dest('styles/'));
+		.pipe(gulp.dest('styles/'))
+		.pipe(livereload());
 });
 
 gulp.task('loginStyles', function() {
@@ -47,7 +50,8 @@ gulp.task('loginStyles', function() {
 		.pipe(concat('login.less'))
 		.pipe(less())
 		.pipe(minifyCSS())
-		.pipe(gulp.dest('styles/'));
+		.pipe(gulp.dest('styles/'))
+		.pipe(livereload());
 });
 
 gulp.task('imagemin', function() { 
@@ -61,9 +65,17 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('browsersync', function() {
+	livereload.listen();
 	
+	gulp.watch(path.themeStyles, ['themeStyles']);
+	gulp.watch(path.editorStyles, ['editorStyles']);
+	gulp.watch(path.loginStyles, ['loginStyles']);
+	
+	gulp.watch('*', function() {
+		livereload.reload();
+	});
 });
 
 
 gulp.task('styles', ['themeStyles', 'loginStyles', 'editorStyles']);
-gulp.task('default', ['scripts', 'imagemin']);
+gulp.task('default', ['scripts', 'imagemin', 'styles', 'browsersync']);
