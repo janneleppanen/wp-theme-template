@@ -40,7 +40,7 @@ MyTheme::load_scripts( array(
 	)
 ));
 ```
-### Set Menus
+### Set menus
 ```
 MyTheme::set_menus( array(
 	'main-menu' => MyTheme::__( 'Main menu' )
@@ -68,4 +68,15 @@ MyTheme::set_style_formats( array(
 ### Set login page stylesheet
 ```
 MyTheme::set_login_stylesheet( '/styles/login.css' );
+```
+## Gulp tasks
+```
+gulp scripts // Uglifies and concatenates js files
+gulp themeStyles // Compiles and concatenates theme less files
+gulp editorStyles // Compiles and concatenates edior less files
+gulp loginStyless // Compiles and concatenates login less files
+gulp imagemin // compress images in images folder
+gulp browsersync // Fires up livereload
+gulp styles // does tasks themeStyles, editorStyles and loginStyles
+gulp // does scripts, imagemin, styles and browsersync
 ```
