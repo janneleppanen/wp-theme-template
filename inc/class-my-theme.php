@@ -9,6 +9,7 @@ class MyTheme {
 	protected static $scripts = array();
 	protected static $sidebars = array();
 	protected static $style_formats = array();
+	protected static $menus = array();
 	protected static $max_revisions = 3;
 	protected static $login_stylesheet = '';
 
@@ -23,6 +24,8 @@ class MyTheme {
 		
 		add_editor_style( '/styles/editor.css' );
 
+		register_nav_menus( self::$menus );
+
 		add_theme_support( 'post-formats', array() );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );
@@ -31,7 +34,7 @@ class MyTheme {
 		add_image_size( 'large', 700, '', true );
 		add_image_size( 'medium', 250, '', true );
 		add_image_size( 'small', 120, '', true );
-		
+
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wp_generator' );
 		remove_action( 'wp_head', 'index_rel_link' );
@@ -124,6 +127,10 @@ class MyTheme {
 		if ( $stylesheet ) {
 			self::$login_stylesheet = $stylesheet;
 		}
+	}
+
+	public static function set_menus( $menus ) {
+		self::$menus = array_merge( self::$menus, $menus );
 	}
 
 	public static function set_max_revisions( $max ) {

@@ -56,4 +56,8 @@ MyTheme::set_style_formats( array(
 	)
 ));
 
+MyTheme::set_menus( array(
+	'main-menu' => MyTheme::__( 'Main menu' )
+));
+
 MyTheme::set_login_stylesheet( '/styles/login.css' );

@@ -40,6 +40,12 @@ MyTheme::load_scripts( array(
 	)
 ));
 ```
+### Set Menus
+```
+MyTheme::set_menus( array(
+	'main-menu' => MyTheme::__( 'Main menu' )
+));
+```
 ### Set sidebars
 ```
 MyTheme::set_sidebars( array(

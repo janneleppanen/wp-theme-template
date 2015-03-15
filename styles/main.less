@@ -177,23 +177,50 @@ blockquote {
 
 /* Header
 ================== */
+.site-header {
+	.clearfix();
+	background: #333;
+	color: #fff;
+	padding: 60px;
+	a { color: #fff; }
+}
 .site-title {
 	margin: 0;
+	float: left;
 	span { 
 		display: none; 
 	}
-}
-.site-header {
-	background: #333;
-	color: #fff;
-	padding: 20px;
-	a { color: #fff; }
 }
 
 
 /* Navigation
 ================== */
-
+.main-menu {
+	float: right;
+	ul {
+		.reset-list();
+		padding: 10px 0;
+	}
+	li {
+		.inline-block();
+		a {
+			.inline-block();
+			padding: 10px;
+			border-bottom: 2px solid transparent;
+			&:hover {
+				border-color: #fff;
+			}
+		}
+	}
+	.current-menu-item,
+	.current_page_item,
+	.current-page-ancestor,
+	.current_page_ancestor {
+		a {
+			color: @link-color;
+		}
+	}
+}
 
 /* Content
 ================== */

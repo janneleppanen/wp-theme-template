@@ -69,8 +69,12 @@ blockquote{font-style:italic;font-weight:300;padding-left:75px;position:relative
 .site-header .header-content{max-width:1200px;margin:0 auto}
 .site-content{max-width:1200px;margin:0 auto;min-height:500px}
 .site-footer .footer-container{max-width:1200px;margin:0 auto}
-.site-title{margin:0}.site-title span{display:none}
-.site-header{background:#333;color:#fff;padding:20px}.site-header a{color:#fff}
+.site-header{background:#333;color:#fff;padding:60px}.site-header:after{display:table;content:'';clear:both}
+.site-header a{color:#fff}
+.site-title{margin:0;float:left}.site-title span{display:none}
+.main-menu{float:right}.main-menu ul{margin:0;padding:0;list-style:none;padding:10px 0}
+.main-menu li{display:inline-block;*display:inline;*zoom:1}.main-menu li a{display:inline-block;*display:inline;*zoom:1;padding:10px;border-bottom:2px solid transparent}.main-menu li a:hover{border-color:#fff}
+.main-menu .current-menu-item a,.main-menu .current_page_item a,.main-menu .current-page-ancestor a,.main-menu .current_page_ancestor a{color:#09f}
 .site-content{padding:60px 0}
 .error404 .primary{text-align:center}
 .site-footer{background:#333;color:#fff}.site-footer a{color:#fff}

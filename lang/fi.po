@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wordpress-theme-template\n"
-"POT-Creation-Date: 2015-02-27 13:41+0200\n"
-"PO-Revision-Date: 2015-02-27 13:42+0200\n"
+"POT-Creation-Date: 2015-03-15 11:46+0200\n"
+"PO-Revision-Date: 2015-03-15 11:46+0200\n"
 "Last-Translator: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language-Team: Janne Leppänen <janne@janneleppanen.com>\n"
 "Language: fi\n"
@@ -25,11 +25,11 @@ msgstr "Valitettavasti sivua ei löytynyt."
 msgid "You can %s visit the Home Page %s or perhaps searching will help"
 msgstr "Voit %s palata etusivulle %s tai kokeilla hakua"
 
-#: ../footer.php:12
+#: ../footer.php:11
 msgid "Jump top"
 msgstr "Takaisin ylös"
 
-#: ../functions.php:38 ../inc/class-my-theme.php:62
+#: ../functions.php:38 ../inc/class-my-theme.php:65
 msgid "Default Sidebar"
 msgstr "Oletussivupalkki"
 
@@ -37,15 +37,23 @@ msgstr "Oletussivupalkki"
 msgid "Analytics Widgets"
 msgstr "Analytiikkavimpaimet"
 
+#: ../functions.php:60
+msgid "Main menu"
+msgstr "Päävalikko"
+
+#: ../header.php:25
+msgid "Skip to content"
+msgstr "Mene suoraan sisältöön"
+
 #: ../searchform.php:3
 msgid "Search"
 msgstr "Etsi"
 
-#: ../inc/class-my-theme.php:63
+#: ../inc/class-my-theme.php:66
 msgid "Place widgets here."
 msgstr "Aseta vimpaimet tähän."
 
-#: ../inc/class-my-theme.php:154
+#: ../inc/class-my-theme.php:161
 msgid "page"
 msgstr "sivu"
 
@@ -94,9 +102,6 @@ msgstr "sivu"
 #, fuzzy
 #~ msgid "Page %s"
 #~ msgstr "Sivut:"
-
-#~ msgid "Main menu"
-#~ msgstr "Päävalikko"
 
 #, fuzzy
 #~ msgid "Image navigation"
