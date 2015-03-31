@@ -15,11 +15,6 @@ MyTheme::load_styles( array(
 		'handle' 	=> 'theme-stylesheet', 
 		'src' 		=> '/styles/main.css', 
 		'media' 	=> 'screen' 
-	),
-	array( 
-		'handle' 	=> 'logger', 
-		'src' 		=> '/styles/login.css', 
-		'media' 	=> 'screen' 
 	)
 ));
 
