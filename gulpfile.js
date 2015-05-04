@@ -2,21 +2,22 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	less = require('gulp-less'),
+	sass = require('gulp-sass'),
 	minifyCSS = require('gulp-minify-css'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
-	livereload = require('gulp-livereload');
+	livereload = require('gulp-livereload'),
+	neat = require('node-neat').includePaths;
 
 var path = {
 	themeStyles: [
-		'styles/main.less',
-		'styles/shop.less'	
+		'styles/main.scss'
 	],
 	loginStyles: [
-		'styles/login.less'
+		'styles/login.scss'
 	],
 	editorStyles: [
-		'styles/editor.less'
+		'styles/editor.scss'
 	]
 };
 
@@ -29,8 +30,10 @@ gulp.task('scripts', function() {
 
 gulp.task('themeStyles', function() {
 	gulp.src(path.themeStyles)
-		.pipe(concat('main.less'))
-		.pipe(less())
+		.pipe(concat('main.scss'))
+		.pipe(sass({
+			includePaths: ['themeStyles'].concat(neat)
+		}))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
@@ -38,8 +41,8 @@ gulp.task('themeStyles', function() {
 
 gulp.task('editorStyles', function() {
 	gulp.src(path.editorStyles)
-		.pipe(concat('editor.less'))
-		.pipe(less())
+		.pipe(concat('editor.scss'))
+		.pipe(sass())
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
@@ -47,8 +50,8 @@ gulp.task('editorStyles', function() {
 
 gulp.task('loginStyles', function() {
 	gulp.src(path.loginStyles)
-		.pipe(concat('login.less'))
-		.pipe(less())
+		.pipe(concat('login.scss'))
+		.pipe(sass())
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
