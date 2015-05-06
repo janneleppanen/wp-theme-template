@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pngquant = require('imagemin-pngquant'),
 	livereload = require('gulp-livereload'),
+	plumber = require('gulp-plumber'),
 	neat = require('node-neat').includePaths;
 
 var path = {
@@ -30,6 +31,7 @@ gulp.task('scripts', function() {
 gulp.task('themeStyles', function() {
 	gulp.src(path.themeStyles)
 		.pipe(concat('main.scss'))
+		.pipe(plumber())
 		.pipe(sass({
 			includePaths: ['themeStyles'].concat(neat)
 		}))
