@@ -10,16 +10,12 @@ var gulp = require('gulp'),
 	neat = require('node-neat').includePaths;
 
 var path = {
-	themeStyles: [
-		'styles/main.scss'
-	],
-	loginStyles: [
-		'styles/login.scss'
-	],
-	editorStyles: [
-		'styles/editor.scss'
-	]
-};
+	styles: {
+		theme: 'styles/theme/',
+		login: 'styles/login/',
+		editor: 'styles/editor/'
+	}
+}
 
 gulp.task('scripts', function() { 
 	return gulp.src('js/**/*.js')
@@ -28,31 +24,37 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('js/'));
 });
 
-gulp.task('themeStyles', function() {
-	gulp.src(path.themeStyles)
-		.pipe(concat('main.scss'))
+gulp.task('styles.theme', function() {
+	gulp.src(path.styles.theme + 'main.scss')
+		.pipe(concat('theme.scss'))
 		.pipe(plumber())
 		.pipe(sass({
-			includePaths: ['themeStyles'].concat(neat)
+			includePaths: ['styles.theme'].concat(neat)
 		}))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
 });
 
-gulp.task('editorStyles', function() {
-	gulp.src(path.editorStyles)
+gulp.task('styles.editor', function() {
+	gulp.src(path.styles.editor + 'main.scss')
 		.pipe(concat('editor.scss'))
-		.pipe(sass())
+		.pipe(plumber())
+		.pipe(sass({
+			includePaths: ['styles.editor'].concat(neat)
+		}))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
 });
 
-gulp.task('loginStyles', function() {
-	gulp.src(path.loginStyles)
+gulp.task('styles.login', function() {
+	gulp.src(path.styles.login + 'main.scss')
 		.pipe(concat('login.scss'))
-		.pipe(sass())
+		.pipe(plumber())
+		.pipe(sass({
+			includePaths: ['styles.login'].concat(neat)
+		}))
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('styles/'))
 		.pipe(livereload());
@@ -70,16 +72,18 @@ gulp.task('imagemin', function() {
 
 gulp.task('browsersync', function() {
 	livereload.listen();
-	
-	gulp.watch(path.themeStyles, ['themeStyles']);
-	gulp.watch(path.editorStyles, ['editorStyles']);
-	gulp.watch(path.loginStyles, ['loginStyles']);
-	
+
 	gulp.watch('*', function() {
 		livereload.reload();
 	});
 });
 
+gulp.task('watch', function() { 
+	gulp.watch(path.styles.theme + '**/*.scss', ['styles.theme']);
+	gulp.watch(path.styles.editor + '**/*.scss', ['styles.editor']);
+	gulp.watch(path.styles.login + '**/*.scss', ['styles.login']);
+});
 
-gulp.task('styles', ['themeStyles', 'loginStyles', 'editorStyles']);
-gulp.task('default', ['scripts', 'imagemin', 'styles', 'browsersync']);
+
+gulp.task('styles', ['styles.theme', 'styles.editor', 'styles.login']);
+gulp.task('default', ['scripts', 'imagemin', 'styles', 'browsersync', 'watch']);

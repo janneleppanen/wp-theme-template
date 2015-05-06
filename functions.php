@@ -13,7 +13,7 @@ MyTheme::init();
 MyTheme::load_styles( array(
 	array( 
 		'handle' 	=> 'theme-stylesheet', 
-		'src' 		=> '/styles/main.css', 
+		'src' 		=> '/styles/theme.css', 
 		'media' 	=> 'screen' 
 	)
 ));
