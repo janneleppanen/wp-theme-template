@@ -1,0 +1,55 @@
+* { 
+	box-sizing: border-box;
+}
+html { 
+	overflow-y: scroll; 
+}
+strong, 
+b { 
+	font-weight: 700; 
+}
+a { 
+	color: $link-color; 
+	text-decoration: none; 
+	@include transition(all 0.2s);
+	&:hover {  
+		opacity: 0.8; 
+	} 
+}
+img { 
+	max-width: 100%; 
+	height: auto; 
+}
+
+.sr-only, 
+.hide { 
+	visibility: hidden; 
+	display: none;
+}
+.aligncenter { 
+	display: block; 
+	margin: 5px auto;
+}
+.alignleft { 
+	float: left; 
+	margin: 5px 20px 20px 0px;
+}
+.alignright { 
+	float: right; 
+	margin: 5px 0px 20px 20px;
+}
+.wp-caption { 
+	max-width: 100%;
+}
+.wp-caption-text { 
+	width: auto;
+}
+.gallery-caption {
+	width: auto;
+}
+.sticky {
+	width: auto;
+}
+.bypostauthor {
+	width: auto;
+}

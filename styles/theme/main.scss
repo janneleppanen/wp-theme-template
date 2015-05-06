@@ -1,0 +1,56 @@
+/* Imports
+================== */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,300,400);
+
+@import '../../vendor/normalize.css';
+@import 'bourbon';
+@import 'neat';
+
+@import 'variables';
+@import 'mixins';
+@import 'general';
+@import 'typography';
+@import 'layout';
+@import 'form';
+
+
+
+
+
+/* Gallery
+================== */
+.gallery {
+	.gallery-item { 
+		float: left; 
+		text-align: 
+		center;
+	}
+	.gallery-caption { 
+		margin: 0px;
+	}
+}
+@mixin wp-gallery-columns( $columnsCount ) { width: ( 100% / $columnsCount ); }
+.gallery-columns-1 .gallery-item { @include wp-gallery-columns(1); }
+.gallery-columns-2 .gallery-item { @include wp-gallery-columns(2); }
+.gallery-columns-3 .gallery-item { @include wp-gallery-columns(3); }
+.gallery-columns-4 .gallery-item { @include wp-gallery-columns(4); }
+.gallery-columns-5 .gallery-item { @include wp-gallery-columns(5); }
+.gallery-columns-6 .gallery-item { @include wp-gallery-columns(6); }
+.gallery-columns-7 .gallery-item { @include wp-gallery-columns(7); }
+.gallery-columns-8 .gallery-item { @include wp-gallery-columns(8); }
+.gallery-columns-9 .gallery-item { @include wp-gallery-columns(9); }
+
+
+/* Animations
+================== */
+.home .site-title {
+	@include animation(fadeIn 2s);
+}
+@include keyframes(fadeIn) {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

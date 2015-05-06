@@ -1,0 +1,26 @@
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+textarea, 
+select { 
+	outline: none;
+	max-width: 100%;
+	width: 400px;
+	padding: 10px; 
+	border: 1px solid #aaa;
+	@include transition(all 0.2s);
+	&:focus {
+		@include transform(scale(1.1, 1));
+		@include box-shadow(0 0 0 2px $link-color);
+		border-color: transparent;
+	}
+}
+label {
+	display: block;
+	font-weight: bold;
+}
+input[type="submit"],
+input[type="button"] {
+	outline: none;
+	@include button();
+}
