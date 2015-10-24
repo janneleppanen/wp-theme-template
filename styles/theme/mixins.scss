@@ -1,46 +1,46 @@
 @mixin container {
-	@include outer-container($content-max-width);
-	width: 92%;
+    @include outer-container($content-max-width);
+    width: 92%;
 }
 
 @mixin reset-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 @mixin box-shadow ($string) {
-	-webkit-box-shadow: $string;
-	-moz-box-shadow:    $string;
-	box-shadow:         $string;
+    -webkit-box-shadow: $string;
+    -moz-box-shadow:    $string;
+    box-shadow:         $string;
 }
 
 @mixin button() {
-	background: $link-color;
-	padding: 10px 20px;
-	border: none;
-	width: auto;
-	display: inline-block;
-	color: #fff;
-	text-decoration: none;
-	@include transition(all 0.2s);
-	&:hover {
-		background: darken($link-color, 10%);
-	}
+    background: $link-color;
+    padding: 10px 20px;
+    border: none;
+    width: auto;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    @include transition(all 0.2s);
+    &:hover {
+        background: darken($link-color, 10%);
+    }
 }
 
 @mixin mobile() {
-	@media #{$mobile} { @content; }
+    @media #{$mobile} { @content; }
 }
 
 @mixin tablet() {
-	@media #{$tablet} { @content; }
+    @media #{$tablet} { @content; }
 }
 
 @mixin desktop() {
-	@media #{$desktop} { @content; }
+    @media #{$desktop} { @content; }
 }
 
 @mixin desktop-lg() {
-	@media #{$desktop-lg} { @content; }
+    @media #{$desktop-lg} { @content; }
 }

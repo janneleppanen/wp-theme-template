@@ -13,21 +13,17 @@
 @import 'layout';
 @import 'form';
 
-
-
-
-
 /* Gallery
 ================== */
 .gallery {
-	.gallery-item { 
-		float: left; 
-		text-align: 
-		center;
-	}
-	.gallery-caption { 
-		margin: 0px;
-	}
+    .gallery-item { 
+        float: left; 
+        text-align: 
+        center;
+    }
+    .gallery-caption { 
+        margin: 0px;
+    }
 }
 @mixin wp-gallery-columns( $columnsCount ) { width: ( 100% / $columnsCount ); }
 .gallery-columns-1 .gallery-item { @include wp-gallery-columns(1); }
@@ -44,13 +40,13 @@
 /* Animations
 ================== */
 .home .site-title {
-	@include animation(fadeIn 2s);
+    @include animation(fadeIn 2s);
 }
 @include keyframes(fadeIn) {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

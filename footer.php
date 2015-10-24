@@ -1,15 +1,17 @@
-	</div><!-- .site-content -->
+    </div><!-- .site-content -->
 
-	<footer class="site-footer" role="contentinfo">
-		<div class="footer-content">
-			
-		</div><!-- .footer-content -->
-		<aside class="copyright">
-			<?php echo '&copy; ' . get_bloginfo('name') . '. ' . date('Y'); ?>
-		</aside>
+    <footer class="site-footer" role="contentinfo">
+        
+        <div class="footer-content">
+            
+        </div><!-- .footer-content -->
+        <aside class="copyright">
+            <?php echo '&copy; ' . get_bloginfo('name') . '. ' . date('Y'); ?>
+        </aside>
 
-		<a href="#top" class="mobile-jump-top"><span><?php MyTheme::_e( 'Jump top' ); ?></span></a>
-	</footer><!-- .site-footer -->
+        <a href="#top" class="mobile-jump-top"><span><?php MyTheme::_e( 'Jump top' ); ?></span></a>
+    
+    </footer><!-- .site-footer -->
 
 </div><!-- .site-wrapper -->
 
