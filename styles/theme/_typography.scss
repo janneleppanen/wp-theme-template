@@ -5,24 +5,14 @@ body {
     word-wrap: break-word; 
     height: 100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol {
+
+h1, h2, h3, h4, h5, h6,
+p, ul, ol {
     margin: 0px 0px 16px 0px; 
     margin-bottom: 1rem; 
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
     // ...
 }
 h1 { font-size: rem(48); }
@@ -30,10 +20,11 @@ h2 { font-size: rem(36); }
 h3 { font-size: rem(24); }
 h4 { font-size: rem(18); }
 h5 { font-size: rem(16); }
-ul,
-ol {
+
+ul, ol {
     // ...
 }
+
 blockquote { 
     font-style: italic; 
     font-weight: 300; 

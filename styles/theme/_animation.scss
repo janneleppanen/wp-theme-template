@@ -1,0 +1,12 @@
+.home .site-title {
+    @include animation(fadeIn 2s);
+}
+
+@include keyframes(fadeIn) {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
