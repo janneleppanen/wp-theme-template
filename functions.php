@@ -11,10 +11,11 @@ define( 'IMAGES',           THEME_DIR . '/images' );
 MyTheme::init();
 
 MyTheme::load_styles( array(
-    array( 
-        'handle'    => 'theme-stylesheet', 
-        'src'       => '/styles/theme.css', 
-        'media'     => 'screen' 
+    array(
+        'handle'    => 'theme-stylesheet',
+        'src'       => '/styles/theme.css',
+        'deps'      => array(),
+        'media'     => 'screen'
     )
 ));
 
@@ -28,17 +29,17 @@ MyTheme::load_scripts( array(
 ));
 
 MyTheme::set_sidebars( array(
-    array( 
-        'id'        => 'sidebar', 
-        'name'      => MyTheme::__( 'Default Sidebar' ), 
+    array(
+        'id'        => 'sidebar',
+        'name'      => MyTheme::__( 'Default Sidebar' ),
     ),
-    array( 
-        'id'        => 'analytics', 
-        'name'      => MyTheme::__( 'Analytics Widgets' ), 
+    array(
+        'id'        => 'analytics',
+        'name'      => MyTheme::__( 'Analytics Widgets' ),
     )
 ));
 
-MyTheme::set_style_formats( array(  
+MyTheme::set_style_formats( array(
     array(
         'title'     => 'Button',
         'selector'  => 'a',
