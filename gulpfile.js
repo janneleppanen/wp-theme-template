@@ -1,12 +1,13 @@
-var gulp       = require('gulp'),
-    concat     = require('gulp-concat'),
-    uglify     = require('gulp-uglify'),
-    sass       = require('gulp-sass'),
-    minifyCSS  = require('gulp-minify-css'),
-    imagemin   = require('gulp-imagemin'),
-    pngquant   = require('imagemin-pngquant'),
-    livereload = require('gulp-livereload'),
-    plumber    = require('gulp-plumber');
+var gulp         = require('gulp'),
+    concat       = require('gulp-concat'),
+    uglify       = require('gulp-uglify'),
+    sass         = require('gulp-sass'),
+    minifyCSS    = require('gulp-minify-css'),
+    imagemin     = require('gulp-imagemin'),
+    pngquant     = require('imagemin-pngquant'),
+    livereload   = require('gulp-livereload'),
+    plumber      = require('gulp-plumber'),
+    autoprefixer = require('gulp-autoprefixer');
 
 var path = {
     styles: {
@@ -30,6 +31,10 @@ gulp.task('styles.theme', function() {
         .pipe(sass({
             includePaths: ['styles.theme']
         }))
+        .pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
         .pipe(livereload());
@@ -42,6 +47,10 @@ gulp.task('styles.editor', function() {
         .pipe(sass({
             includePaths: ['styles.editor']
         }))
+        .pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
         .pipe(livereload());
@@ -54,6 +63,10 @@ gulp.task('styles.login', function() {
         .pipe(sass({
             includePaths: ['styles.login']
         }))
+        .pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
         .pipe(livereload());
