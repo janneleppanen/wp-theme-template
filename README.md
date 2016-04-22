@@ -3,7 +3,7 @@
 
 ## Documentation
 
-### Require Helper Clases and define theme constants
+### Require Helper Classes and define theme constants
 Start functions.php file by including helper classes and defining theme constants.
 ```
 require_once( 'inc/class-my-theme.php' );
@@ -22,10 +22,10 @@ MyTheme::init();
 ### Load CSS files
 ```
 MyTheme::load_styles( array(
-    array( 
-        'handle'    => 'theme-stylesheet', 
-        'src'       => '/styles/main.css', 
-        'media'     => 'screen' 
+    array(
+        'handle'    => 'theme-stylesheet',
+        'src'       => '/styles/main.css',
+        'media'     => 'screen'
     )
 ));
 ```
@@ -49,8 +49,8 @@ MyTheme::set_menus( array(
 ### Set sidebars
 ```
 MyTheme::set_sidebars( array(
-    array( 
-        'id'        => 'sidebar', 
+    array(
+        'id'        => 'sidebar',
         'name'      => MyTheme::__( 'Default Sidebar' )
     )
 ));
@@ -71,9 +71,9 @@ MyTheme::set_login_stylesheet( '/styles/login.css' );
 ```
 ## Gulp tasks
 ```
-gulp scripts // Uglifies and concatenates js files
+gulp scripts // Compress and concatenates JavaScript files
 gulp themeStyles // Compiles and concatenates theme less files
-gulp editorStyles // Compiles and concatenates edior less files
+gulp editorStyles // Compiles and concatenates editor less files
 gulp loginStyless // Compiles and concatenates login less files
 gulp imagemin // compress images in images folder
 gulp browsersync // Fires up livereload
