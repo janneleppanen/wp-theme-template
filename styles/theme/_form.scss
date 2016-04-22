@@ -1,17 +1,17 @@
-input[type="text"], 
-input[type="password"], 
-input[type="email"], 
-textarea, 
-select { 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
     outline: none;
     max-width: 100%;
     width: 400px;
-    padding: 10px; 
+    padding: 10px;
     border: 1px solid #aaa;
-    @include transition(all 0.2s);
+    transition: all 0.2s;
     &:focus {
-        @include transform(scale(1.1, 1));
-        @include box-shadow(0 0 0 2px $link-color);
+        transform: scale(1.1, 1);
+        box-shadow: 0 0 0 2px $link-color;
         border-color: transparent;
     }
 }

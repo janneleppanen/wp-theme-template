@@ -6,8 +6,7 @@ var gulp       = require('gulp'),
     imagemin   = require('gulp-imagemin'),
     pngquant   = require('imagemin-pngquant'),
     livereload = require('gulp-livereload'),
-    plumber    = require('gulp-plumber'),
-    neat       = require('node-neat').includePaths;
+    plumber    = require('gulp-plumber');
 
 var path = {
     styles: {
@@ -17,7 +16,7 @@ var path = {
     }
 }
 
-gulp.task('scripts', function() { 
+gulp.task('scripts', function() {
     return gulp.src('js/**/*.js')
         .pipe(concat('build.js'))
         .pipe(uglify())
@@ -29,7 +28,7 @@ gulp.task('styles.theme', function() {
         .pipe(concat('theme.scss'))
         .pipe(plumber())
         .pipe(sass({
-            includePaths: ['styles.theme'].concat(neat)
+            includePaths: ['styles.theme']
         }))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
@@ -41,7 +40,7 @@ gulp.task('styles.editor', function() {
         .pipe(concat('editor.scss'))
         .pipe(plumber())
         .pipe(sass({
-            includePaths: ['styles.editor'].concat(neat)
+            includePaths: ['styles.editor']
         }))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
@@ -53,14 +52,14 @@ gulp.task('styles.login', function() {
         .pipe(concat('login.scss'))
         .pipe(plumber())
         .pipe(sass({
-            includePaths: ['styles.login'].concat(neat)
+            includePaths: ['styles.login']
         }))
         .pipe(minifyCSS())
         .pipe(gulp.dest('styles/'))
         .pipe(livereload());
 });
 
-gulp.task('imagemin', function() { 
+gulp.task('imagemin', function() {
     return gulp.src('images/*')
         .pipe(imagemin({
             progressive: true,
@@ -78,7 +77,7 @@ gulp.task('browsersync', function() {
     });
 });
 
-gulp.task('watch', function() { 
+gulp.task('watch', function() {
     gulp.watch(path.styles.theme + '**/*.scss', ['styles.theme']);
     gulp.watch(path.styles.editor + '**/*.scss', ['styles.editor']);
     gulp.watch(path.styles.login + '**/*.scss', ['styles.login']);

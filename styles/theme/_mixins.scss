@@ -1,6 +1,18 @@
+@mixin clearfix {
+    &:before, &:after {
+        display: table;
+        content: ' ';
+        clear: both;
+    }
+}
+
 @mixin container {
-    @include outer-container($content-max-width);
-    width: 92%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include clearfix();
 }
 
 @mixin reset-list {
@@ -23,7 +35,7 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-    @include transition(all 0.2s);
+    transition: all 0.2s;
     &:hover {
         background: darken($link-color, 10%);
     }
